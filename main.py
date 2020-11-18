@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, request, render_template, make_response, session
+from flask import Flask, redirect, url_for, request, render_template, make_response, session, abort
 
 app = Flask(__name__)
 
@@ -181,6 +181,25 @@ def logout():
     # remove the username from the session if it is there
     session.pop('username', None)
     return redirect(url_for('index_ss'))
+
+
+@app.route('/abort')
+def index1():
+   return render_template('login_abort.html')
+
+@app.route('/login_abort',methods = ['POST', 'GET'])
+def login1():
+   if request.method == 'POST':
+      if request.form['username'] == 'admin' :
+         return redirect(url_for('success1'))
+      else:
+         abort(401)
+   else:
+      return redirect(url_for('index1'))
+
+@app.route('/success1')
+def success1():
+   return 'logged in successfully'
 
 
 if __name__ == '__main__':
