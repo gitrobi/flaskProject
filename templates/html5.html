@@ -42,11 +42,38 @@ myHero {
 <script>
 var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
+
+// 画矩形
 ctx.fillStyle="#FF0000";
 ctx.fillRect(0,0,150,75);
+
+// 画线
 ctx.moveTo(0,0);
 ctx.lineTo(200,100);
 ctx.stroke();
+
+// 画圆
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+// 画字(设置字体和大小)
+ctx.fillStyle="blue";
+ctx.font="30px Arial";
+ctx.fillText("Hello World",30,30);
+
+// 空心字
+ctx.font="30px Arial";
+ctx.strokeText("Hello World",30,80);
+
+// Create gradient
+var grd=ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"yellow");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle=grd;
+ctx.fillRect(10,10,150,80);
 </script>
 
 </body>
