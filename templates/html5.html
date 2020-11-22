@@ -2,8 +2,15 @@
 <html>
 <head>
 <meta charset="utf-8">
+<title>Styling HTML5</title>
+  <!--[if lt IE 9]>
+  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js" rel="external nofollow" rel="external nofollow" ></script>
+  <![endif]-->
 </head>
-<script>document.createElement("myHero")</script>
+
+<script>
+document.createElement("myHero")
+</script>
 <style>
 myHero {
 	display: block;
@@ -13,6 +20,7 @@ myHero {
 }
 </style>
 <body>
+<a href="/static/html5_shiv.html" >shiv 兼容</a> <br/>
 
 <video width="320" height="240" controls>
   <source src="/static/video/movie.mp4" type="video/mp4">
@@ -26,5 +34,10 @@ myHero {
 	<p>我的第一个段落。</p>
 
 	<myHero>我的第一个新元素</myHero>
+
+<canvas id="myCanvas" width="200" height="100" style="border:10px dotted #000000; background:#ddd;">
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+
 </body>
 </html>
