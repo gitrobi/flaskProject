@@ -185,21 +185,23 @@ def logout():
 
 @app.route('/abort')
 def index1():
-   return render_template('login_abort.html')
+    return render_template('login_abort.html')
 
-@app.route('/login_abort',methods = ['POST', 'GET'])
+
+@app.route('/login_abort', methods=['POST', 'GET'])
 def login1():
-   if request.method == 'POST':
-      if request.form['username'] == 'admin' :
-         return redirect(url_for('success1'))
-      else:
-         abort(401)
-   else:
-      return redirect(url_for('index1'))
+    if request.method == 'POST':
+        if request.form['username'] == 'admin':
+            return redirect(url_for('success1'))
+        else:
+            abort(401)
+    else:
+        return redirect(url_for('index1'))
+
 
 @app.route('/success1')
 def success1():
-   return 'logged in successfully'
+    return 'logged in successfully'
 
 
 if __name__ == '__main__':
