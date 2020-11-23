@@ -21,7 +21,7 @@
     <tr>
         <td> <img src="{{ item.get('image_url', '') }}" alt="img" width="120px" height="160px" /> <br/> {{ item.get('name', '') }}</td>
         <td><font>{{ item.get('desc', '') }} </font> </td>
-        <td> <a href="play/{{ item.get('play_url', '') }}" >播放</a> </td>
+        <td> <a href="{{{{ url_for('play')}}/?url={{ item.get('play_url', '') }}" >播放</a> </td>
     </tr>
  {% endfor %}
 </table>
