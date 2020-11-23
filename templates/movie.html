@@ -4,6 +4,9 @@
     <meta charset="UTF-8" name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>movie</title>
+    <style type="text/css">
+    font {font-style:italic;font-size:small}
+    </style>
 </head>
 <body>
 
@@ -17,7 +20,7 @@
      {% for item in result %}
     <tr>
         <td> <img src="{{ item.get('image_url', '') }}" alt="img" width="120px" height="160px" /> <br/> {{ item.get('name', '') }}</td>
-        <td> {{ item.get('desc', '') }} </td>
+        <td><font>{{ item.get('desc', '') }} </font> </td>
         <td> <a href="{{ item.get('play_url', '') }}" >播放</a> </td>
     </tr>
  {% endfor %}
