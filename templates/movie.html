@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="referrer" content="no-referrer">
+    <title>movie</title>
+</head>
+<body>
+
+<table border = 1>
+    <tr>
+        <th>图片</th>
+        <th>描述</th>
+        <th>播放</th>
+    </tr>
+
+     {% for item in result %}
+    <tr>
+        <td> <img src="{{ item.get('image_url', '') }}" alt="img" width="120px" height="160px" /> <br/> {{ item.get('name', '') }}</td>
+        <td> {{ item.get('desc', '') }} </td>
+        <td> <a href="{{ item.get('play_url', '') }}" >播放</a> </td>
+    </tr>
+ {% endfor %}
+</table>
+
+</body>
+</html>
