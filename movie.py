@@ -10,7 +10,7 @@ def _vip_play_url(url):
 
 
 def _short_desc(desc):
-    return desc if len(desc) <= 150 else desc[0:150]
+    return desc if len(desc) <= 130 else desc[0:130]
 
 
 def _get_request(url):
