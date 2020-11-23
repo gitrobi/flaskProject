@@ -6,7 +6,7 @@ url2 = 'https://www.cuan.la/m3u8.php?url='
 
 
 def _vip_play_url(url):
-    return url1 + url
+    return url2 + url
 
 
 def _short_desc(desc):
