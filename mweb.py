@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from movie import iqiyi
 
 app = Flask(__name__)
@@ -21,6 +21,12 @@ def index():
 @app.route("/movie")
 def movie():
     return render_template("movie.html", result=get_movie_list())
+
+
+@app.route("/play/")
+def play():
+    url = request.args.get("url")
+    return render_template("play.html", url=url)
 
 
 if __name__ == '__main__':
