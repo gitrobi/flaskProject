@@ -45,7 +45,7 @@ class iqiyi:
             desc = _short_desc(one.get('description'))
             play_url = _vip_play_url(one.get('playUrl'))
             latest_list.append({'name':name, 'image_url': image_url, 'play_url': play_url, 'desc': desc})
-        print(latest_list)
+        # print(latest_list)
         return latest_list
 
 
